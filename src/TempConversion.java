@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class TempConversion {
-     public  static void menu(){
+     public   void menu(){
 
          Scanner a = new Scanner(System.in);
          Scanner value = new Scanner(System.in);
@@ -14,15 +14,21 @@ public class TempConversion {
          do {
              System.out.println("Please which temperature would you like to convert to");
              System.out.println(">>>> Enter an option  <<<< \n >> (1) Convert To Celsius\n >> (2) Convert To Fahrenheit\n >> (3) Back To Menu");
-              option = a.nextInt();
+
+
+
+             option = a.nextInt();
               switch (option){
                   case 1:
                       System.out.println("Enter a value");
                       temp = value.nextDouble();
+                      convertToCelsius(temp);
                       break;
+
                   case 2:
                       System.out.println("Enter a value");
                        temp = value.nextDouble();
+                       convertToFahrenheit(temp);
                       break;
 
                   case 3:
@@ -32,18 +38,19 @@ public class TempConversion {
                       System.out.println("  >>  Enter valid option");
 
               }
-         }while (option != 3);
+         }while (option == 3);
      }
 
 
-     public static   double convertToCelsius (double value){
-            double ans = (value - 32 )  * 5/9;
-            return  ans;
+     public static void  convertToCelsius (double valueTemp){
+            double ans = (valueTemp - 32 )  * 5/9;
+         System.out.println(valueTemp + "°F is " + ans + "°C.");
+
      }
 
-    public static   double convertToFahrenheit (double value){
-        double ans = (value *  9/5 ) + 32;
-        return  ans;
+    public static  void convertToFahrenheit (double valueTemp){
+        double ans = (valueTemp *  9/5 ) + 32;
+        System.out.println(valueTemp + "°C is " + ans + "°F.");
     }
 
 
