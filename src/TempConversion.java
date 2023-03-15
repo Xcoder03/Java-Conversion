@@ -13,32 +13,24 @@ public class TempConversion {
 
          do {
              System.out.println("Please which temperature would you like to convert to");
-             System.out.println(">>>> Enter an option  <<<< \n >> (1) Convert To Celsius\n >> (2) Convert To Fahrenheit\n >> (3) Back To Menu");
-
-
-
+             System.out.println(">>>> Enter an option  <<<< \n >> (1) Convert To Celsius\n >> (2) Convert To Fahrenheit\n >> (3) Exit");
              option = a.nextInt();
-              switch (option){
-                  case 1:
-                      System.out.println("Enter a value");
-                      temp = value.nextDouble();
-                      convertToCelsius(temp);
-                      break;
-
-                  case 2:
-                      System.out.println("Enter a value");
-                       temp = value.nextDouble();
-                       convertToFahrenheit(temp);
-                      break;
-
-                  case 3:
-                      System.out.println("Closing......");
-                      break;
-                  default:
-                      System.out.println("  >>  Enter valid option");
-
-              }
-         }while (option == 3);
+             switch (option) {
+                 case 1 -> {
+                     System.out.println("Enter a value");
+                     temp = value.nextDouble();
+                     convertToCelsius(temp);
+                 }
+                 case 2 -> {
+                     System.out.println("Enter a value");
+                     temp = value.nextDouble();
+                     convertToFahrenheit(temp);
+                 }
+                 case 3 -> System.out.println("Closing......");
+                 default -> System.out.println("  >>  Enter valid option");
+             }
+         }while (option != 3);
+         a.close();
      }
 
 
